@@ -10,24 +10,37 @@
 
     <div class="container py-4">
 
-      <div class="row row-cols-2">
+      <div class="row row-cols-3">
 
         <div class="col">
           
           <div class="card shadow-sm">
             <div class="card-body">
 
-              <table class="table" style="table-layout: fixed;">
+              <div class="card-title fw-bold text-center pb-3 border-bottom">Advocacy Change</div>
+
+              <div class="row g-2 border-bottom pb-3 mb-2">
+                <div class="col">
+                  <label for="dateA" class="col-form-label col-form-label-sm text-muted">Date A</label>
+                  <input type="date" class="form-control form-control-sm" value="2020-09-01" />
+                </div>
+                <div class="col">
+                  <label for="dateB" class="col-form-label col-form-label-sm text-muted">Date B</label>
+                  <input type="date" class="form-control form-control-sm" value="2021-04-14" />
+                </div>
+              </div>
+
+              <table class="table mb-0" style="table-layout: fixed;">
                 <thead>
                   <tr>
                     <th>Advocacy</th>
-                    <th class="text-center">
-                      <div>Date A</div>
-                      <input type="date" class="form-control form-control-sm" value="2020-09-01" />
+                    <th>
+                      <div class="small text-muted fw-normal">(Date A)</div>
+                      <div>1 Sep '20</div>
                     </th>
-                    <th class="text-center">
-                      <div>Date B</div>
-                      <input type="date" class="form-control form-control-sm" value="2021-04-14" />
+                    <th>
+                      <div class="small text-muted fw-normal">(Date B)</div>
+                      <div>14 Apr '21</div>
                     </th>
                     <th class="text-right" style="width: 8ch;">Change</th>
                   </tr>
