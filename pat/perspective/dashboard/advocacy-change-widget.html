@@ -10,7 +10,7 @@
 
     <div class="container py-4">
 
-      <div class="row row-cols-3">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
 
         <div class="col">
           
@@ -19,7 +19,7 @@
 
               <div class="card-title fw-bold text-center pb-3 border-bottom">Advocacy Change</div>
 
-              <div class="row g-2 border-bottom pb-3 mb-2">
+              <div class="row row-cols-1 row-cols-lg-2 g-2 border-bottom pb-3 mb-2">
                 <div class="col">
                   <label for="dateA" class="col-form-label col-form-label-sm text-muted">Date A</label>
                   <input type="date" class="form-control form-control-sm" value="2020-09-01" />
@@ -33,12 +33,12 @@
               <table class="table mb-0" style="table-layout: fixed;">
                 <thead>
                   <tr>
-                    <th>Advocacy</th>
+                    <th></th>
                     <th>
                       <div class="small text-muted fw-normal">(Date A)</div>
                       <div>1 Sep '20</div>
                     </th>
-                    <th>
+                    <th class="d-none d-xl-table-cell">
                       <div class="small text-muted fw-normal">(Date B)</div>
                       <div>14 Apr '21</div>
                     </th>
@@ -47,14 +47,18 @@
                 </thead>
                 <tbody class="align-middle">
                   <tr>
-                    <th>Advocate</th>
+                    <th>
+                      <div class="d-none d-xxl-block">Advocate</div>
+                      <div class="d-none d-lg-block d-xxl-none">Adv.</div>
+                      <div class="d-lg-none">A</div>
+                    </th>
                     <td>
                       <div>2%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 2%; background-color: #61b752;"></div>
                       </div>
                     </td>
-                    <td>
+                    <td class="d-none d-xl-table-cell">
                       <div>6%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 6%; background-color: #61b752;"></div>
@@ -63,14 +67,18 @@
                     <td class="text-end fw-bold">+4%</td>
                   </tr>
                   <tr>
-                    <th>Advocate Lite</th>
+                    <th>
+                      <div class="d-none d-xxl-block">Advocate Lite</div>
+                      <div class="d-none d-lg-block d-xxl-none">Adv. Lite</div>
+                      <div class="d-lg-none">AL</div>
+                    </th>
                     <td>
                       <div>13%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 13%; background-color: #8b94b1;"></div>
                       </div>
                     </td>
-                    <td>
+                    <td class="d-none d-xl-table-cell">
                       <div>23%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 23%; background-color: #8b94b1;"></div>
@@ -79,14 +87,18 @@
                     <td class="text-end fw-bold">+10%</td>
                   </tr>
                   <tr>
-                    <th>Potentially at Risk</th>
+                    <th>
+                      <div class="d-none d-xxl-block">Potentially at Risk</div>
+                      <div class="d-none d-lg-block d-xxl-none">Pot. at Risk</div>
+                      <div class="d-lg-none">PAR</div>
+                    </th>
                     <td>
                       <div>34%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 34%; background-color: #f6bf58;"></div>
                       </div>
                     </td>
-                    <td>
+                    <td class="d-none d-xl-table-cell">
                       <div>29%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 29%; background-color: #f6bf58;"></div>
@@ -95,14 +107,17 @@
                     <td class="text-end fw-bold">-5%</td>
                   </tr>
                   <tr>
-                    <th>At Risk</th>
+                    <th>
+                      <div class="d-none d-lg-block">At Risk</div>
+                      <div class="d-lg-none">AR</div>
+                    </th>
                     <td>
                       <div>27%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 27%; background-color: #b46350;"></div>
                       </div>
                     </td>
-                    <td>
+                    <td class="d-none d-xl-table-cell">
                       <div>22%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 22%; background-color: #b46350;"></div>
@@ -111,14 +126,17 @@
                     <td class="text-end fw-bold">-5%</td>
                   </tr>
                   <tr>
-                    <th>No Usage</th>
+                    <th>
+                      <div class="d-none d-lg-block">No Usage</div>
+                      <div class="d-lg-none">NU</div>
+                    </th>
                     <td>
                       <div>21%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 21%; background-color: #aaaaaa;"></div>
                       </div>
                     </td>
-                    <td>
+                    <td class="d-none d-xl-table-cell">
                       <div>17%</div>
                       <div class="progress">
                         <div class="progress-bar" style="width: 17%; background-color: #aaaaaa;"></div>
