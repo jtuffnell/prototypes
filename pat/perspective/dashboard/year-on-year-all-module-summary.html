@@ -37,7 +37,7 @@
 
               <div class="col small mt-0">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="show-prior-year-bars" checked onchange="togglePriorYearBars()">
+                  <input class="form-check-input" type="checkbox" id="show-prior-year-bars" onchange="togglePriorYearBars()">
                   <label class="form-check-label" for="show-prior-year-bars">Show prior year bars</label>
                 </div>
               </div>
@@ -50,7 +50,7 @@
               <div class="mb-2">
                 <div class="d-grid fw-bold" style="grid-template-columns: 3rem 1fr 3rem; row-gap: 4px; column-gap: 1rem;">
                   <span>745</span>
-                  <div class="text-center">Observations <small>(<i class="fas fa-caret-up"></i> 11%)</small></div>
+                  <div class="text-center">Observations <small>(<i class="fas fa-caret-up text-positive"></i> 11%)</small></div>
                   <span class="small text-muted text-end">(94%)</span>
                 </div>
 
@@ -58,7 +58,7 @@
                   <div class="progress-bar bg-turquoise" style="width: 94%;"></div>
                 </div>
 
-                <div class="prior-year-bar mt-1">
+                <div class="prior-year-bar mt-1 d-none">
 
                   <div class="progress" style="height: 8px;">
                     <div class="progress-bar bg-turquoise-200" style="width: 83%;"></div>
@@ -75,7 +75,7 @@
               <div class="mb-2">
                 <div class="d-grid fw-bold" style="grid-template-columns: 3rem 1fr 3rem; row-gap: 4px; column-gap: 1rem;">
                   <span>745</span>
-                  <div class="text-center">Perf. Mgmt. <small>(<i class="fas fa-caret-down"></i> 15%)</small></div>
+                  <div class="text-center">Perf. Mgmt. <small>(<i class="fas fa-caret-down text-negative"></i> 15%)</small></div>
                   <span class="small text-muted text-end">(53%)</span>
                 </div>
 
@@ -83,7 +83,7 @@
                   <div class="progress-bar bg-emerald" style="width: 53%;"></div>
                 </div>
 
-                <div class="prior-year-bar mt-1">
+                <div class="prior-year-bar mt-1 d-none">
 
                   <div class="progress" style="height: 8px;">
                     <div class="progress-bar bg-emerald-200" style="width: 68%;"></div>
@@ -101,7 +101,7 @@
               <div class="mb-2">
                 <div class="d-grid fw-bold" style="grid-template-columns: 3rem 1fr 3rem; row-gap: 4px; column-gap: 1rem;">
                   <span>745</span>
-                  <div class="text-center">SEF <small>(<i class="fas fa-caret-down"></i> 14%)</small></div>
+                  <div class="text-center">SEF <small>(<i class="fas fa-caret-down text-negative"></i> 14%)</small></div>
                   <span class="small text-muted text-end">(12%)</span>
                 </div>
 
@@ -109,7 +109,7 @@
                   <div class="progress-bar bg-peter-river" style="width: 12%;"></div>
                 </div>
 
-                <div class="prior-year-bar mt-1">
+                <div class="prior-year-bar mt-1 d-none">
                   <div class="progress" style="height: 8px;">
                     <div class="progress-bar bg-peter-river-200" style="width: 26%;"></div>
                   </div>
@@ -125,7 +125,7 @@
               <div class="mb-2">
                 <div class="d-grid fw-bold" style="grid-template-columns: 3rem 1fr 3rem; row-gap: 4px; column-gap: 1rem;">
                   <span>745</span>
-                  <div class="text-center">Team Reviews <small>(<i class="fas fa-caret-up"></i> 15%)</small></div>
+                  <div class="text-center">Team Reviews <small>(<i class="fas fa-caret-up text-positive"></i> 15%)</small></div>
                   <span class="small text-muted text-end">(19%)</span>
                 </div>
 
@@ -133,7 +133,7 @@
                   <div class="progress-bar bg-amethyst" style="width: 19%;"></div>
                 </div>
 
-                <div class="prior-year-bar mt-1">
+                <div class="prior-year-bar mt-1 d-none">
                   <div class="progress" style="height: 8px;">
                     <div class="progress-bar bg-amethyst-200" style="width: 4%;"></div>
                   </div>
@@ -149,15 +149,15 @@
               <div class="mb-2">
                 <div class="d-grid fw-bold" style="grid-template-columns: 3rem 1fr 3rem; row-gap: 4px; column-gap: 1rem;">
                   <span>745</span>
-                  <div class="text-center">Sch. Dev. Plans <small>(<i class="fas fa-caret-down"></i> 2%)</small></div>
+                  <div class="text-center">Sch. Dev. Plans <small>(<i class="fas fa-caret-down text-negative"></i> 2%)</small></div>
                   <span class="small text-muted text-end">(50%)</span>
                 </div>
 
-                <div class="progress mb-1">
+                <div class="progress">
                   <div class="progress-bar bg-wet-asphalt" style="width: 50%;"></div>
                 </div>
 
-                <div class="prior-year-bar mt-1">
+                <div class="prior-year-bar mt-1 d-none">
                   <div class="progress" style="height: 8px;">
                     <div class="progress-bar bg-wet-asphalt-200" style="width: 52%;"></div>
                   </div>
