@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../../static/css/bootstrap4/bootstrap-custom.css">
     <script src="https://kit.fontawesome.com/9292536ebe.js" crossorigin="anonymous"></script>
-    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#cbxLogins").change(function () {     
+          $(".container-fluid").find(".ip-loginchart").toggleClass("d-none");
+        });
+        $("#cbxSchools").change(function () {     
+          $(".container-fluid").find(".ip-schoolbreakdown").toggleClass("d-none");
+        });
+      });
+    </script>
+    <title></title>   
   </head>
   <body>
     <div class="container">
@@ -99,12 +110,15 @@
     <div class="container-fluid">  
       <div class="row ml-5 mr-5">
         <div class="col">
-          <table class="table table-hover" style="table-layout: fixed; margin-bottom:100px;">
+          <table class="table table-hover" style="table-layout: fixed; margin-bottom:150px;">
             <thead class="thead-light">
               <tr>
-                <th>LA</th>
-                <th style="width:150px;"></th>   
-                <th>Module Usage</th>  
+                <th style="width: 15%;">LA</th>
+                <th style="width: 7%;">Data</th>  
+                <th style="width: 7%;">Modules</th>  
+                <th>KPIs</th>  
+                <th>Broadcast</th>
+                <th>Pendulum</th>
                 <th>Users & Logins</th>  
                 <th>Lite Setup</th>  
                 <th style="width:110px;"></th>       
@@ -114,67 +128,155 @@
               <td style="border-left:10px solid green">
                 <strong>Barking & Dagenham</strong><br/>
                 <small>Outer London</small><br/>
-                <small><strong>Acc Man:</strong>&nbsp;Holly</small><br/>
                 <span class="badge badge-info">Steering Group</span>&nbsp;<span class="badge badge-success">Conf Attendance</span>&nbsp;<span class="badge badge-success">Advocate</span>&nbsp;<span class="badge badge-success">Rolled Out</span>
+                <div class="mt-2 mb-2">
+                  <strong>Schools</strong>
+                  <div>
+                    <ul style="list-style:none; padding-left:0px;">
+                      <li>
+                        <label style="width: 50%; text-align: right; padding-right: 5px;">Total:</label>
+                        78
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="group ip-schoolbreakdown">
+                    <div class="float-left w-50 border-right">
+                      <ul class="small" style="list-style:none; padding-left:0px;">
+                        <li>
+                          <label style="width: 75%; text-align: right; padding-right: 5px;">Maintained:</label>
+                          35
+                        </li>
+                        <li>
+                          <label style="width: 75%; text-align: right; padding-right: 5px;">Academy:</label>
+                          43
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="float-left w-50">
+                      <ul class="small" style="list-style:none; padding-left:0px;">
+                        <li>
+                          <label style="width: 75%; text-align: right; padding-right: 5px;">Primary:</label>
+                          58
+                        </li>
+                        <li>
+                          <label style="width: 75%; text-align: right; padding-right: 5px;">Secondary:</label>
+                          18
+                        </li>
+                        <li>
+                          <label style="width: 75%; text-align: right; padding-right: 5px;">Other:</label>
+                          2
+                        </li>
+                      </ul>
+                    </div>
+                  </div>    
+                </div>
               </td>
               <td>
-                <span><i class="fas fa-school"></i>: 78 Schools</span><br/>               
-              </td>
-              <td>
-                <h6 class="font-weight-bold">Data</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Attainment</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Census</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;CLA</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;CIN</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pupil Prem</dd>
+                <dl class="row row-cols-1 mb-0">
+                  <dd class="col"><i class="fas fa-circle text-good"></i>&nbsp;Attainment</dd>
+                  <dd class="col"><i class="fas fa-circle text-req-improvement"></i>&nbsp;Census</dd>
+                  <dd class="col"><i class="fas fa-circle text-req-improvement"></i>&nbsp;CLA</dd>
+                  <dd class="col"><i class="fas fa-circle text-inadequate"></i>&nbsp;CIN</dd>
+                  <dd class="col"><i class="fas fa-circle text-req-improvement"></i>&nbsp;Pupil Prem</dd>
                 </dl>
-                <h6 class="font-weight-bold">Module</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pendulum</dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;<s>Broadcast</s></dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;<s>From Schools</s></dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;News</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Nova</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Batch Rep</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;KPIs</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Insight</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Documents</dd>
+              </td>
+              <td>
+                <dl class="row row-cols-1 mb-0">
+                  <dd class="col"><i class="fas fa-circle text-inadequate"></i>&nbsp;News</dd>
+                  <dd class="col"><i class="fas fa-circle text-inadequate"></i>&nbsp;Nova</dd>
+                  <dd class="col"><i class="fas fa-circle text-outstanding"></i>&nbsp;Batch Rep</dd>
+                  <dd class="col"><i class="fas fa-circle text-outstanding"></i>&nbsp;Insight</dd>
+                  <dd class="col"><i class="fas fa-circle text-req-improvement"></i>&nbsp;Documents</dd>
                 </dl>
               </td>
               <td>
-                <div class="text-center font-weight-bold mb-3">Admin: 5</div>
-                <div class="progress border border-dark w-100 mb-3">
+                <div class="text-center mb-1">
+                  <label style="width: 100px;" class="text-right mr-2">RAGs</label><i class="fas fa-circle text-outstanding"></i>&nbsp;(80%)  
+                </div> 
+                <div class="text-center mb-1">
+                  <label style="width: 100px;" class="text-right mr-2">Grades</label><i class="fas fa-circle text-req-improvement"></i>&nbsp;(45%) 
+                </div>    
+                <div class="text-center mb-1">
+                  <label style="width: 100px;" class="text-right mr-2">Target Grades</label><i class="fas fa-circle text-good"></i>&nbsp;(65%) 
+                </div>             
+                <div class="text-center mb-1">
+                  <label style="width: 100px;" class="text-right mr-2">Categories</label><i class="fas fa-circle text-inadequate"></i>&nbsp;(10%) 
+                </div>   
+              </td>
+              <td>
+                <div class="text-center mb-1">
+                  <span class="badge badge-success">Good Usage</span>
+                </div>               
+                <div class="text-center mb-3">Users: 5</div>
+                <div class="ip-loginchart progress border border-dark w-100 mb-3">
                   <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                  <div class="progress-bar bg-req-improvement" style="width:20%;">1</div>
+                  <div class="progress-bar bg-good" style="width:20%;">1</div>
                   <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
                 </div>
-                <div class="text-center font-weight-bold mb-3">Standard: 25</div>
-                <div class="progress border border-dark w-100 mb-3">
+                <div class="text-center mb-1">
+                  <i class="fas fa-circle text-success"></i>&nbsp;From Schools
+                </div> 
+              </td>
+              <td>
+                <div class="text-center mb-1">
+                  <span class="badge badge-warning">Moderate Usage</span>
+                </div>
+                <div class="text-center mb-3">Visit Manager+: 5</div>
+                <div class="ip-loginchart progress border border-dark w-100 mb-3">
+                  <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
+                  <div class="progress-bar bg-good" style="width:20%;">1</div>
+                  <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                </div>
+                <div class="text-center mb-3">Adviser: 25</div>
+                <div class="ip-loginchart progress border border-dark w-100 mb-3">
                   <div class="progress-bar bg-outstanding" style="width:8%;">2</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">10</div>
+                  <div class="progress-bar bg-good" style="width:20%;">5</div>
+                  <div class="progress-bar bg-req-improvement" style="width:20%;">5</div>
                   <div class="progress-bar bg-inadequate" style="width:32%;">8</div>
                   <div class="progress-bar bg-secondary" style="width:20%;">5</div>
                 </div>
-                <div class="text-center font-weight-bold mb-3">Other: 10</div>
-                <div class="progress border border-dark w-100">
+                <div class="text-center mb-3">Standard: 10</div>
+                <div class="ip-loginchart progress border border-dark w-100">
                   <div class="progress-bar bg-inadequate" style="width:60%;">6</div>
                   <div class="progress-bar bg-secondary" style="width:40%;">4</div>
                 </div>
               </td>
               <td>
-                <div class="text-center font-weight-bold mb-3">Accounts: 74</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:10%;">10</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">40</div>
-                  <div class="progress-bar bg-inadequate" style="width:20%;">20</div>
-                  <div class="progress-bar bg-secondary" style="width:30%;">30</div>
+                <div class="text-center mb-3">Admin: 5</div>
+                <div class="ip-loginchart progress border border-dark w-100 mb-3">
+                  <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
+                  <div class="progress-bar bg-good" style="width:20%;">1</div>
+                  <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
                 </div>
-                <div class="text-center" style="font-size:0.7em;">
+                <div class="text-center mb-3">Standard: 25</div>
+                <div class="ip-loginchart progress border border-dark w-100 mb-3">
+                  <div class="progress-bar bg-outstanding" style="width:8%;">2</div>
+                  <div class="progress-bar bg-good" style="width:20%;">5</div>
+                  <div class="progress-bar bg-req-improvement" style="width:20%;">5</div>
+                  <div class="progress-bar bg-inadequate" style="width:32%;">8</div>
+                  <div class="progress-bar bg-secondary" style="width:20%;">5</div>
+                </div>
+                <div class="text-center mb-3">Other: 10</div>
+                <div class="ip-loginchart progress border border-dark w-100">
+                  <div class="progress-bar bg-inadequate" style="width:60%;">6</div>
+                  <div class="progress-bar bg-secondary" style="width:40%;">4</div>
+                </div>
+              </td>
+              <td>
+                <div class="text-center mb-3">Accounts: 74</div>
+                <div class="ip-loginchart progress border border-dark w-100 mb-3">
+                  <div class="progress-bar bg-outstanding" style="width:10%;">10</div>
+                  <div class="progress-bar bg-good" style="width:40%;">40</div>
+                  <div class="progress-bar bg-req-improvement" style="width:20%;">20</div>
+                  <div class="progress-bar bg-inadequate" style="width:20%;">20</div>
+                  <div class="progress-bar bg-secondary" style="width:10%;">10</div>
+                </div>
+                <div class="ip-loginchart text-center" style="font-size:0.7em;">
                   <i class="fas fa-square text-success"></i> This Month
-                  <i class="fas fa-square text-warning"></i> 1 to 3 Months<br />
-                  <i class="fas fa-square text-danger"></i> 3 to 6 Months
-                  <i class="fas fa-square text-secondary"></i> More than 6 Months
+                  <i class="fas fa-square text-primary"></i> 1 to 3 Months<br />
+                  <i class="fas fa-square text-warning"></i> 3 to 6 Months
+                  <i class="fas fa-square text-danger"></i> More than 6 Months<br />
+                  <i class="fas fa-square text-secondary"></i> Never Logged In
                 </div>
               </td>
               <td>
@@ -189,10 +291,101 @@
               </td>
             </tr>
             <tr class="collapse" id="collapse-1">
-              <td class="bg-light" colspan="6">
-                <div class="row">
+              <td class="bg-light" colspan="9">
+                <div class="row">                  
                   <div class="col">
-                    <h6>Data</h5>
+                    <h6 class="font-weight-bold">Usage</h6>
+                    <table class="w-100">
+                      <tr>
+                        <th></th>
+                        <th class="text-center">Lastest</th>
+                        <th colspan="2" class="text-center">Recent Use</th>
+                      </tr>
+                      <tr>
+                        <td>News</td>
+                        <td class="text-center">10/02/2021</td>
+                        <td class="text-center">95% Schs</td>
+                        <td class="text-center">1 Usrs</td>
+                      </tr>
+                      <tr>
+                        <td>Batch Rep</td>
+                        <td class="text-center">Never</td>
+                        <td class="text-center">-</td>
+                        <td class="text-center">-</td>
+                      </tr>
+                      <tr>
+                        <td>Pendulum</td>
+                        <td class="text-center">15/05/2021</td>
+                        <td class="text-center">50% Schs</td>
+                        <td class="text-center">5 Usrs</td>
+                      </tr>
+                      <tr>
+                        <td>Broadcast</td>
+                        <td></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                      </tr>
+                      <tr>
+                        <td>Broadcast Plus</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                      </tr>
+                      <tr>
+                        <td>Documents</td>
+                        <td class="text-center">12/04/2021</td>
+                        <td class="text-center">15% Schs</td>
+                        <td class="text-center">2 Usrs</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="col">
+                    <h6 class="font-weight-bold">KPIs</h6>
+                    <table class="w-100">
+                      <tr>
+                        <td style="width: 120px;">RAGs</td>
+                        <td class="text-center">
+                          <div class="ip-loginchart progress border border-dark w-100 mb-3">
+                            <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
+                            <div class="progress-bar bg-good" style="width:20%;">1</div>
+                            <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Grades</td>
+                        <td class="text-center">
+                          <div class="ip-loginchart progress border border-dark w-100 mb-3">
+                            <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
+                            <div class="progress-bar bg-good" style="width:20%;">1</div>
+                            <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Target Grades</td>
+                        <td class="text-center">
+                          <div class="ip-loginchart progress border border-dark w-100 mb-3">
+                            <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
+                            <div class="progress-bar bg-good" style="width:20%;">1</div>
+                            <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Categories</td>
+                        <td class="text-center">
+                          <div class="ip-loginchart progress border border-dark w-100 mb-3">
+                            <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
+                            <div class="progress-bar bg-good" style="width:20%;">1</div>
+                            <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="col">
+                    <h6 class="font-weight-bold">Data (2020/21)</h6>
                     <table class="w-100">
                       <tr>
                         <th></th>
@@ -231,1126 +424,83 @@
                         <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
                       </tr>
                     </table>
-                    <h6 class="mt-3">KPIs</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Grades</th>
-                          <th class="text-center">Targets</th>
-                          <th class="text-center">RAGs</th>
-                          <th class="text-center">Tags</th>
-                          <th class="text-center">Categories</th>
-                        </tr>
-                        <tr>
-                          <td>Schools</td>
-                          <td class="text-center">20%</td>
-                          <td class="text-center">35%</td>
-                          <td class="text-center">22%</td>
-                          <td class="text-center">10%</td>
-                          <td class="text-center">15%</td>
-                        </tr>
-                      </table>
                   </div>
                   <div class="col">
-                    <h6>Visibility</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Abs:Aut</th>
-                          <th class="text-center">Abs:Aut/Spr</th>
-                          <th class="text-center">Abs:Full</th>
-                          <th class="text-center">EYFSP</th>
-                          <th class="text-center">Phonics</th>
-                          <th class="text-center">KS1</th>
-                          <th class="text-center">KS2</th>
-                          <th class="text-center">KS4</th>
-                          <th class="text-center">Exc:Aut</th>
-                          <th class="text-center">Exc:Aut/Spr</th>
-                          <th class="text-center">Exc:Full</th>
-                        </tr>
-                        <tr>
-                          <th>2020/21</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2019/20</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2018/19</th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                        </tr>
-                      </table>
-                  </div>
-                  <div class="col">
-                    <h6>Usage</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Lastest</th>
-                          <th colspan="2" class="text-center">Recent Use</th>
-                        </tr>
-                        <tr>
-                          <td>News</td>
-                          <td class="text-center">10/02/2021</td>
-                          <td class="text-center">95% Schs</td>
-                          <td class="text-center">1 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td>Batch Rep</td>
-                          <td class="text-center">Never</td>
-                          <td class="text-center">-</td>
-                          <td class="text-center">-</td>
-                        </tr>
-                        <tr>
-                          <td>Pendulum</td>
-                          <td class="text-center">15/05/2021</td>
-                          <td class="text-center">50% Schs</td>
-                          <td class="text-center">5 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast Plus</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td>Documents</td>
-                          <td class="text-center">12/04/2021</td>
-                          <td class="text-center">15% Schs</td>
-                          <td class="text-center">2 Usrs</td>
-                        </tr>
-                      </table>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr class="border-bottom">
-              <td>
-                <strong>Barnet</strong><br/>
-                <small>Outer London</small><br/>
-                <small><strong>Acc Man:</strong>&nbsp;Gillian</small><br/>
-                <span class="badge badge-warning">Conf Attendance</span>&nbsp;<span class="badge badge-warning">Pot At Risk</span>&nbsp;<span class="badge badge-success">Rolled Out</span>
-              </td>
-              <td>
-                <span><i class="fas fa-school"></i>: 154 Schools</span><br/>               
-              </td>
-              <td>
-                <h6 class="font-weight-bold">Data</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Attainment</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Census</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;CLA</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;CIN</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pupil Prem</dd>
-                </dl>
-                <h6 class="font-weight-bold">Module</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pendulum</dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;Broadcast</dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;From Schools</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;News</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Nova</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Batch Rep</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;KPIs</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Insight</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Documents</dd>
-                </dl>
-              </td>
-              <td>
-                <div class="text-center font-weight-bold mb-3">Admin: 5</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                  <div class="progress-bar bg-req-improvement" style="width:20%;">1</div>
-                  <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
-                </div>
-                <div class="text-center font-weight-bold mb-3">Standard: 25</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:8%;">2</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">10</div>
-                  <div class="progress-bar bg-inadequate" style="width:32%;">8</div>
-                  <div class="progress-bar bg-secondary" style="width:20%;">5</div>
-                </div>
-                <div class="text-center font-weight-bold mb-3">Other: 10</div>
-                <div class="progress border border-dark w-100">
-                  <div class="progress-bar bg-inadequate" style="width:60%;">6</div>
-                  <div class="progress-bar bg-secondary" style="width:40%;">4</div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center font-weight-bold mb-3">Accounts: 74</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:10%;">10</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">40</div>
-                  <div class="progress-bar bg-inadequate" style="width:20%;">20</div>
-                  <div class="progress-bar bg-secondary" style="width:30%;">30</div>
-                </div>
-                <div class="text-center" style="font-size:0.7em;">
-                  <i class="fas fa-square text-success"></i> This Month
-                  <i class="fas fa-square text-warning"></i> 1 to 3 Months<br />
-                  <i class="fas fa-square text-danger"></i> 3 to 6 Months
-                  <i class="fas fa-square text-secondary"></i> More than 6 Months
-                </div>
-              </td>
-              <td>
-                <button type="button" class="btn btn-sm btn-psp-primary dropdown-toggle mb-2 w-100" data-toggle="dropdown">Options</button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a target="_blank" class="dropdown-item" >Archive&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >See Users&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >Update Modules&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >Update Rollout Status&hellip;</a>
-                </div><br/>
-                <button class="btn btn-sm btn-info w-100" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-2">More...</button>
-              </td>
-            </tr>
-            <tr class="collapse" id="collapse-2">
-              <td class="bg-light" colspan="6">
-                <div class="row">
-                  <div class="col">
-                    <h6>Data</h5>
+                    <h6 class="font-weight-bold">Visibility</h6>
                     <table class="w-100">
                       <tr>
-                        <th></th>
-                        <th class="text-center">EYFSP</th>
-                        <th class="text-center">Phonics</th>
-                        <th class="text-center">KS1</th>
-                        <th class="text-center">KS2</th>
-                        <th class="text-center">KS4</th>
+                        <td>Module</td>
+                        <td>2018/19</td>
+                        <td>2019/20</td>
+                        <td>2020/21</td>
                       </tr>
                       <tr>
-                        <td>Schools</td>
-                        <td class="text-center">95%</td>
-                        <td class="text-center">98%</td>
-                        <td class="text-center">99%</td>
-                        <td class="text-center">92%</td>
-                        <td class="text-center">0%</td>
+                        <td>Abs: Aut</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>Abs: Aut/Spr</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>Abs: Full</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>EYFSP</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>Phonics</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>KS1</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>KS2</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>KS4</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>Exc: Aut</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>Exc: Aut/Spr</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <td>Exc: Full</td>
+                        <td><i class="fas fa-times-circle text-danger"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
+                        <td><i class="fas fa-check-circle text-success"></i></td>
                       </tr>
                     </table>
-                    <table class="w-100">
-                      <tr>
-                        <th></th>
-                        <th class="text-center">PP</th>
-                        <th class="text-center">CLA</th>
-                        <th class="text-center">CIN</th>
-                        <th class="text-center">Aut</th>
-                        <th class="text-center">Spr</th>
-                        <th class="text-center">Sum</th>
-                      </tr>
-                      <tr>
-                        <td>Imported</td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                      </tr>
-                    </table>
-                    <h6 class="mt-3">KPIs</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Grades</th>
-                          <th class="text-center">Targets</th>
-                          <th class="text-center">RAGs</th>
-                          <th class="text-center">Tags</th>
-                          <th class="text-center">Categories</th>
-                        </tr>
-                        <tr>
-                          <td>Schools</td>
-                          <td class="text-center">20%</td>
-                          <td class="text-center">35%</td>
-                          <td class="text-center">22%</td>
-                          <td class="text-center">10%</td>
-                          <td class="text-center">15%</td>
-                        </tr>
-                      </table>
-                  </div>
-                  <div class="col">
-                    <h6>Visibility</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Abs:Aut</th>
-                          <th class="text-center">Abs:Aut/Spr</th>
-                          <th class="text-center">Abs:Full</th>
-                          <th class="text-center">EYFSP</th>
-                          <th class="text-center">Phonics</th>
-                          <th class="text-center">KS1</th>
-                          <th class="text-center">KS2</th>
-                          <th class="text-center">KS4</th>
-                          <th class="text-center">Exc:Aut</th>
-                          <th class="text-center">Exc:Aut/Spr</th>
-                          <th class="text-center">Exc:Full</th>
-                        </tr>
-                        <tr>
-                          <th>2020/21</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2019/20</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2018/19</th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                        </tr>
-                      </table>
-                  </div>
-                  <div class="col">
-                    <h6>Usage</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Lastest</th>
-                          <th colspan="2" class="text-center">Recent Use</th>
-                        </tr>
-                        <tr>
-                          <td>News</td>
-                          <td class="text-center">10/02/2021</td>
-                          <td class="text-center">95% Schs</td>
-                          <td class="text-center">1 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td>Batch Rep</td>
-                          <td class="text-center">Never</td>
-                          <td class="text-center">-</td>
-                          <td class="text-center">-</td>
-                        </tr>
-                        <tr>
-                          <td>Pendulum</td>
-                          <td class="text-center">15/05/2021</td>
-                          <td class="text-center">50% Schs</td>
-                          <td class="text-center">5 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast Plus</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td>Documents</td>
-                          <td class="text-center">12/04/2021</td>
-                          <td class="text-center">15% Schs</td>
-                          <td class="text-center">2 Usrs</td>
-                        </tr>
-                      </table>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr class="border-bottom">
-              <td style="border-left:10px solid grey">
-                <strong>Barnsley</strong><br/>
-                <small>Yorkshire & Humber</small><br/>
-                <small><strong>Acc Man:</strong>&nbsp;Holly</small><br/>
-                <span class="badge badge-danger">Conf Attendance</span>&nbsp;<span class="badge badge-danger">At Risk</span>&nbsp;<span class="badge badge-warning">Not Started</span>
-              </td>
-              <td>
-                <span><i class="fas fa-school"></i>: 154 Schools</span><br/>               
-              </td>
-              <td>
-                <h6 class="font-weight-bold">Data</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Attainment</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Census</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;CLA</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;CIN</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pupil Prem</dd>
-                </dl>
-                <h6 class="font-weight-bold">Module</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pendulum</dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;Broadcast</dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;From Schools</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;News</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Nova</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Batch Rep</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;KPIs</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Insight</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Documents</dd>
-                </dl>
-              </td>
-              <td>
-                <div class="text-center font-weight-bold mb-3">Admin: 5</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                  <div class="progress-bar bg-req-improvement" style="width:20%;">1</div>
-                  <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
-                </div>
-                <div class="text-center font-weight-bold mb-3">Standard: 25</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:8%;">2</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">10</div>
-                  <div class="progress-bar bg-inadequate" style="width:32%;">8</div>
-                  <div class="progress-bar bg-secondary" style="width:20%;">5</div>
-                </div>
-                <div class="text-center font-weight-bold mb-3">Other: 10</div>
-                <div class="progress border border-dark w-100">
-                  <div class="progress-bar bg-inadequate" style="width:60%;">6</div>
-                  <div class="progress-bar bg-secondary" style="width:40%;">4</div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center font-weight-bold mb-3">Accounts: 74</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:10%;">10</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">40</div>
-                  <div class="progress-bar bg-inadequate" style="width:20%;">20</div>
-                  <div class="progress-bar bg-secondary" style="width:30%;">30</div>
-                </div>
-                <div class="text-center" style="font-size:0.7em;">
-                  <i class="fas fa-square text-success"></i> This Month
-                  <i class="fas fa-square text-warning"></i> 1 to 3 Months<br />
-                  <i class="fas fa-square text-danger"></i> 3 to 6 Months
-                  <i class="fas fa-square text-secondary"></i> More than 6 Months
-                </div>
-              </td>
-              <td>
-                <button type="button" class="btn btn-sm btn-psp-primary dropdown-toggle mb-2 w-100" data-toggle="dropdown">Options</button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a target="_blank" class="dropdown-item" >Archive&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >See Users&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >Update Modules&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >Update Rollout Status&hellip;</a>
-                </div><br/>
-                <button class="btn btn-sm btn-info w-100" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-3">More...</button>
-              </td>
-            </tr>
-            <tr class="collapse" id="collapse-3">
-              <td class="bg-light" colspan="6">
-                <div class="row">
-                  <div class="col">
-                    <h6>Data</h5>
-                    <table class="w-100">
-                      <tr>
-                        <th></th>
-                        <th class="text-center">EYFSP</th>
-                        <th class="text-center">Phonics</th>
-                        <th class="text-center">KS1</th>
-                        <th class="text-center">KS2</th>
-                        <th class="text-center">KS4</th>
-                      </tr>
-                      <tr>
-                        <td>Schools</td>
-                        <td class="text-center">95%</td>
-                        <td class="text-center">98%</td>
-                        <td class="text-center">99%</td>
-                        <td class="text-center">92%</td>
-                        <td class="text-center">0%</td>
-                      </tr>
-                    </table>
-                    <table class="w-100">
-                      <tr>
-                        <th></th>
-                        <th class="text-center">PP</th>
-                        <th class="text-center">CLA</th>
-                        <th class="text-center">CIN</th>
-                        <th class="text-center">Aut</th>
-                        <th class="text-center">Spr</th>
-                        <th class="text-center">Sum</th>
-                      </tr>
-                      <tr>
-                        <td>Imported</td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                      </tr>
-                    </table>
-                    <h6 class="mt-3">KPIs</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Grades</th>
-                          <th class="text-center">Targets</th>
-                          <th class="text-center">RAGs</th>
-                          <th class="text-center">Tags</th>
-                          <th class="text-center">Categories</th>
-                        </tr>
-                        <tr>
-                          <td>Schools</td>
-                          <td class="text-center">20%</td>
-                          <td class="text-center">35%</td>
-                          <td class="text-center">22%</td>
-                          <td class="text-center">10%</td>
-                          <td class="text-center">15%</td>
-                        </tr>
-                      </table>
-                  </div>
-                  <div class="col">
-                    <h6>Visibility</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Abs:Aut</th>
-                          <th class="text-center">Abs:Aut/Spr</th>
-                          <th class="text-center">Abs:Full</th>
-                          <th class="text-center">EYFSP</th>
-                          <th class="text-center">Phonics</th>
-                          <th class="text-center">KS1</th>
-                          <th class="text-center">KS2</th>
-                          <th class="text-center">KS4</th>
-                          <th class="text-center">Exc:Aut</th>
-                          <th class="text-center">Exc:Aut/Spr</th>
-                          <th class="text-center">Exc:Full</th>
-                        </tr>
-                        <tr>
-                          <th>2020/21</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2019/20</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2018/19</th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                        </tr>
-                      </table>
-                  </div>
-                  <div class="col">
-                    <h6>Usage</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Lastest</th>
-                          <th colspan="2" class="text-center">Recent Use</th>
-                        </tr>
-                        <tr>
-                          <td>News</td>
-                          <td class="text-center">10/02/2021</td>
-                          <td class="text-center">95% Schs</td>
-                          <td class="text-center">1 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td>Batch Rep</td>
-                          <td class="text-center">Never</td>
-                          <td class="text-center">-</td>
-                          <td class="text-center">-</td>
-                        </tr>
-                        <tr>
-                          <td>Pendulum</td>
-                          <td class="text-center">15/05/2021</td>
-                          <td class="text-center">50% Schs</td>
-                          <td class="text-center">5 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast Plus</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td>Documents</td>
-                          <td class="text-center">12/04/2021</td>
-                          <td class="text-center">15% Schs</td>
-                          <td class="text-center">2 Usrs</td>
-                        </tr>
-                      </table>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr class="border-bottom">
-              <td style="border-left:10px solid green">
-                <strong>Bath & North East Somerset</strong><br/>
-                <small>West</small><br/>
-                <small><strong>Acc Man:</strong>&nbsp;Andy</small><br/>
-                <span class="badge badge-success">Conf Attendance</span>&nbsp;<span class="badge badge-primary">Advocate Lite</span>&nbsp;<span class="badge badge-success">Rolled Out</span>
-              </td>
-              <td>
-                <span><i class="fas fa-school"></i>: 90 Schools</span><br/>               
-              </td>
-              <td>
-                <h6 class="font-weight-bold">Data</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Attainment</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Census</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;CLA</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;CIN</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pupil Prem</dd>
-                </dl>
-                <h6 class="font-weight-bold">Module</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pendulum</dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;Broadcast</dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;From Schools</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;News</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Nova</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Batch Rep</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;KPIs</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Insight</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Documents</dd>
-                </dl>
-              </td>
-              <td>
-                <div class="text-center font-weight-bold mb-3">Admin: 5</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                  <div class="progress-bar bg-req-improvement" style="width:20%;">1</div>
-                  <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
-                </div>
-                <div class="text-center font-weight-bold mb-3">Standard: 25</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:8%;">2</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">10</div>
-                  <div class="progress-bar bg-inadequate" style="width:32%;">8</div>
-                  <div class="progress-bar bg-secondary" style="width:20%;">5</div>
-                </div>
-                <div class="text-center font-weight-bold mb-3">Other: 10</div>
-                <div class="progress border border-dark w-100">
-                  <div class="progress-bar bg-inadequate" style="width:60%;">6</div>
-                  <div class="progress-bar bg-secondary" style="width:40%;">4</div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center font-weight-bold mb-3">Accounts: 74</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:10%;">10</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">40</div>
-                  <div class="progress-bar bg-inadequate" style="width:20%;">20</div>
-                  <div class="progress-bar bg-secondary" style="width:30%;">30</div>
-                </div>
-                <div class="text-center" style="font-size:0.7em;">
-                  <i class="fas fa-square text-success"></i> This Month
-                  <i class="fas fa-square text-warning"></i> 1 to 3 Months<br />
-                  <i class="fas fa-square text-danger"></i> 3 to 6 Months
-                  <i class="fas fa-square text-secondary"></i> More than 6 Months
-                </div>
-              </td>
-              <td>
-                <button type="button" class="btn btn-sm btn-psp-primary dropdown-toggle mb-2 w-100" data-toggle="dropdown">Options</button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a target="_blank" class="dropdown-item" >Archive&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >See Users&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >Update Modules&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >Update Rollout Status&hellip;</a>
-                </div><br/>
-                <button class="btn btn-sm btn-info w-100" type="button" data-toggle="collapse" data-target="#collapse-4" aria-expanded="false" aria-controls="collapse-1">More...</button>
-              </td>
-            </tr>
-            <tr class="collapse" id="collapse-4">
-              <td class="bg-light" colspan="6">
-                <div class="row">
-                  <div class="col">
-                    <h6>Data</h5>
-                    <table class="w-100">
-                      <tr>
-                        <th></th>
-                        <th class="text-center">EYFSP</th>
-                        <th class="text-center">Phonics</th>
-                        <th class="text-center">KS1</th>
-                        <th class="text-center">KS2</th>
-                        <th class="text-center">KS4</th>
-                      </tr>
-                      <tr>
-                        <td>Schools</td>
-                        <td class="text-center">95%</td>
-                        <td class="text-center">98%</td>
-                        <td class="text-center">99%</td>
-                        <td class="text-center">92%</td>
-                        <td class="text-center">0%</td>
-                      </tr>
-                    </table>
-                    <table class="w-100">
-                      <tr>
-                        <th></th>
-                        <th class="text-center">PP</th>
-                        <th class="text-center">CLA</th>
-                        <th class="text-center">CIN</th>
-                        <th class="text-center">Aut</th>
-                        <th class="text-center">Spr</th>
-                        <th class="text-center">Sum</th>
-                      </tr>
-                      <tr>
-                        <td>Imported</td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                      </tr>
-                    </table>
-                    <h6 class="mt-3">KPIs</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Grades</th>
-                          <th class="text-center">Targets</th>
-                          <th class="text-center">RAGs</th>
-                          <th class="text-center">Tags</th>
-                          <th class="text-center">Categories</th>
-                        </tr>
-                        <tr>
-                          <td>Schools</td>
-                          <td class="text-center">20%</td>
-                          <td class="text-center">35%</td>
-                          <td class="text-center">22%</td>
-                          <td class="text-center">10%</td>
-                          <td class="text-center">15%</td>
-                        </tr>
-                      </table>
-                  </div>
-                  <div class="col">
-                    <h6>Visibility</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Abs:Aut</th>
-                          <th class="text-center">Abs:Aut/Spr</th>
-                          <th class="text-center">Abs:Full</th>
-                          <th class="text-center">EYFSP</th>
-                          <th class="text-center">Phonics</th>
-                          <th class="text-center">KS1</th>
-                          <th class="text-center">KS2</th>
-                          <th class="text-center">KS4</th>
-                          <th class="text-center">Exc:Aut</th>
-                          <th class="text-center">Exc:Aut/Spr</th>
-                          <th class="text-center">Exc:Full</th>
-                        </tr>
-                        <tr>
-                          <th>2020/21</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2019/20</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2018/19</th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                        </tr>
-                      </table>
-                  </div>
-                  <div class="col">
-                    <h6>Usage</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Lastest</th>
-                          <th colspan="2" class="text-center">Recent Use</th>
-                        </tr>
-                        <tr>
-                          <td>News</td>
-                          <td class="text-center">10/02/2021</td>
-                          <td class="text-center">95% Schs</td>
-                          <td class="text-center">1 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td>Batch Rep</td>
-                          <td class="text-center">Never</td>
-                          <td class="text-center">-</td>
-                          <td class="text-center">-</td>
-                        </tr>
-                        <tr>
-                          <td>Pendulum</td>
-                          <td class="text-center">15/05/2021</td>
-                          <td class="text-center">50% Schs</td>
-                          <td class="text-center">5 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast Plus</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td>Documents</td>
-                          <td class="text-center">12/04/2021</td>
-                          <td class="text-center">15% Schs</td>
-                          <td class="text-center">2 Usrs</td>
-                        </tr>
-                      </table>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr class="border-bottom">
-              <td>
-                <strong>Bedford Borough</strong><br/>
-                <small>Outer London</small><br/>
-                <small><strong>Acc Man:</strong>&nbsp;Holly</small><br/>
-                <span class="badge badge-success">Conf Attendance</span>&nbsp;<span class="badge badge-success">Advocate</span>&nbsp;<span class="badge badge-success">In Progress</span>
-              </td>
-              <td>
-                <span><i class="fas fa-school"></i>: 85 Schools</span><br/>               
-              </td>
-              <td>
-                <h6 class="font-weight-bold">Data</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Attainment</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Census</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;CLA</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;CIN</dd>
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pupil Prem</dd>
-                </dl>
-                <h6 class="font-weight-bold">Module</h6>
-                <dl class="row row-cols-3 mb-0">
-                  <dd class="col"><i class="fas fa-circle text-warning"></i>&nbsp;Pendulum</dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;Broadcast</dd>
-                  <dd class="col text-muted"><i class="fas fa-circle"></i>&nbsp;From Schools</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;News</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Nova</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Batch Rep</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;KPIs</dd>
-                  <dd class="col"><i class="fas fa-circle text-success"></i>&nbsp;Insight</dd>
-                  <dd class="col"><i class="fas fa-circle text-danger"></i>&nbsp;Documents</dd>
-                </dl>
-              </td>
-              <td>
-                <div class="text-center font-weight-bold mb-3">Admin: 5</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                  <div class="progress-bar bg-req-improvement" style="width:20%;">1</div>
-                  <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
-                </div>
-                <div class="text-center font-weight-bold mb-3">Standard: 25</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:8%;">2</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">10</div>
-                  <div class="progress-bar bg-inadequate" style="width:32%;">8</div>
-                  <div class="progress-bar bg-secondary" style="width:20%;">5</div>
-                </div>
-                <div class="text-center font-weight-bold mb-3">Other: 10</div>
-                <div class="progress border border-dark w-100">
-                  <div class="progress-bar bg-inadequate" style="width:60%;">6</div>
-                  <div class="progress-bar bg-secondary" style="width:40%;">4</div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center font-weight-bold mb-3">Accounts: 74</div>
-                <div class="progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:10%;">10</div>
-                  <div class="progress-bar bg-req-improvement" style="width:40%;">40</div>
-                  <div class="progress-bar bg-inadequate" style="width:20%;">20</div>
-                  <div class="progress-bar bg-secondary" style="width:30%;">30</div>
-                </div>
-                <div class="text-center" style="font-size:0.7em;">
-                  <i class="fas fa-square text-success"></i> This Month
-                  <i class="fas fa-square text-warning"></i> 1 to 3 Months<br />
-                  <i class="fas fa-square text-danger"></i> 3 to 6 Months
-                  <i class="fas fa-square text-secondary"></i> More than 6 Months
-                </div>
-              </td>
-              <td>
-                <button type="button" class="btn btn-sm btn-psp-primary dropdown-toggle mb-2 w-100" data-toggle="dropdown">Options</button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a target="_blank" class="dropdown-item" >Archive&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >See Users&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >Update Modules&hellip;</a>
-                  <a target="_blank" class="dropdown-item" >Update Rollout Status&hellip;</a>
-                </div><br/>
-                <button class="btn btn-sm btn-info w-100" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-5">More...</button>
-              </td>
-            </tr>
-            <tr class="collapse" id="collapse-5">
-              <td class="bg-light" colspan="6">
-                <div class="row">
-                  <div class="col">
-                    <h6>Data</h5>
-                    <table class="w-100">
-                      <tr>
-                        <th></th>
-                        <th class="text-center">EYFSP</th>
-                        <th class="text-center">Phonics</th>
-                        <th class="text-center">KS1</th>
-                        <th class="text-center">KS2</th>
-                        <th class="text-center">KS4</th>
-                      </tr>
-                      <tr>
-                        <td>Schools</td>
-                        <td class="text-center">95%</td>
-                        <td class="text-center">98%</td>
-                        <td class="text-center">99%</td>
-                        <td class="text-center">92%</td>
-                        <td class="text-center">0%</td>
-                      </tr>
-                    </table>
-                    <table class="w-100">
-                      <tr>
-                        <th></th>
-                        <th class="text-center">PP</th>
-                        <th class="text-center">CLA</th>
-                        <th class="text-center">CIN</th>
-                        <th class="text-center">Aut</th>
-                        <th class="text-center">Spr</th>
-                        <th class="text-center">Sum</th>
-                      </tr>
-                      <tr>
-                        <td>Imported</td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                      </tr>
-                    </table>
-                    <h6 class="mt-3">KPIs</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Grades</th>
-                          <th class="text-center">Targets</th>
-                          <th class="text-center">RAGs</th>
-                          <th class="text-center">Tags</th>
-                          <th class="text-center">Categories</th>
-                        </tr>
-                        <tr>
-                          <td>Schools</td>
-                          <td class="text-center">20%</td>
-                          <td class="text-center">35%</td>
-                          <td class="text-center">22%</td>
-                          <td class="text-center">10%</td>
-                          <td class="text-center">15%</td>
-                        </tr>
-                      </table>
-                  </div>
-                  <div class="col">
-                    <h6>Visibility</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Abs:Aut</th>
-                          <th class="text-center">Abs:Aut/Spr</th>
-                          <th class="text-center">Abs:Full</th>
-                          <th class="text-center">EYFSP</th>
-                          <th class="text-center">Phonics</th>
-                          <th class="text-center">KS1</th>
-                          <th class="text-center">KS2</th>
-                          <th class="text-center">KS4</th>
-                          <th class="text-center">Exc:Aut</th>
-                          <th class="text-center">Exc:Aut/Spr</th>
-                          <th class="text-center">Exc:Full</th>
-                        </tr>
-                        <tr>
-                          <th>2020/21</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2019/20</th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                          <th class="text-center"><i class="fas fa-check-circle text-success"></i></th>
-                        </tr>
-                        <tr>
-                          <th>2018/19</th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                          <th class="text-center"><i class="fas fa-times-circle text-danger"></i></th>
-                        </tr>
-                      </table>
-                  </div>
-                  <div class="col">
-                    <h6>Usage</h5>
-                      <table class="w-100">
-                        <tr>
-                          <th></th>
-                          <th class="text-center">Lastest</th>
-                          <th colspan="2" class="text-center">Recent Use</th>
-                        </tr>
-                        <tr>
-                          <td>News</td>
-                          <td class="text-center">10/02/2021</td>
-                          <td class="text-center">95% Schs</td>
-                          <td class="text-center">1 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td>Batch Rep</td>
-                          <td class="text-center">Never</td>
-                          <td class="text-center">-</td>
-                          <td class="text-center">-</td>
-                        </tr>
-                        <tr>
-                          <td>Pendulum</td>
-                          <td class="text-center">15/05/2021</td>
-                          <td class="text-center">50% Schs</td>
-                          <td class="text-center">5 Usrs</td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td class="text-muted">Broadcast Plus</td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td>Documents</td>
-                          <td class="text-center">12/04/2021</td>
-                          <td class="text-center">15% Schs</td>
-                          <td class="text-center">2 Usrs</td>
-                        </tr>
-                      </table>
                   </div>
                 </div>
               </td>
@@ -1367,11 +517,26 @@
             <div class="form-inline">
               <input name="ctl00$body$QuickSearchQuery" type="search" id="body_QuickSearchQuery" placeholder="Quick Search..." class="form-control form-control-sm" />
               <button class="btn btn-primary mx-3" type="button" data-toggle="modal" data-target="#filtersModal">Filters</button>
-              <span class="mr-1 small ">Order By</span>               
+              <ul style="padding-left: 0px; list-style: none;">
+                <li>
+                  <input id="cbxLogins" class="mt-2" type="checkbox" checked="true"></input>
+                  <span class="mr-2">Show Login Bars</span>                
+                </li>
+                <li>
+                  <input id="cbxSchools" class="mt-2" type="checkbox" checked="true"></input>
+                  <span class="mr-2">Show School Breakdown</span>    
+                </li>
+              </ul>
+              <span class="mr-1">Order By</span>               
               <select name="ctl00$body$OrderByField" id="body_OrderByField" class="form-control form-control-sm">
-                <option value="Advocacy">Advocacy</option>               
+                <option value="Advocacy">Advocacy</option>    
+                <option value="Categories">Categoried Schools</option>
+                <option value="Grades">Graded Schools</option>           
                 <option selected="selected" value="LAName">LA Name</option>
+                <option value="RAGs">Ragged Schools</option>
                 <option value="Rank">Rank</option>
+                <option value="Schools">School Total</option>
+                <option value="TargetGrades">Target Graded Schools</option>
               </select>
               <select name="ctl00$body$OrderByOrder" id="body_OrderByOrder" class="form-control form-control-sm ml-1">
                 <option selected="selected" value="ASC">Asc.</option>
@@ -1409,16 +574,6 @@
                 </select>
               </div>
               <div class="col form-group">
-                <label class="font-weight-bold">Acc. Manager:</label>
-                <select class="form-control">
-                  <option>- All -</option>
-                  <option>Andy</option>
-                  <option>Gillian</option>
-                  <option>Holly</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="col form-group">
                 <label class="font-weight-bold">Advocacy:</label>
                 <select class="form-control">
                   <option>- All -</option>
@@ -1427,6 +582,46 @@
                   <option>Pot. At Risk</option>
                   <option>At Risk</option>
                   <option>Not Used</option>
+                </select>
+              </div>
+              <div class="col form-group">
+                <label class="font-weight-bold">Steering Group:</label>
+                <select class="form-control">
+                  <option>- All -</option>
+                  <option>Memeber</option>
+                  <option>Not Member</option>
+                </select>
+              </div>
+            </div>
+            <h5 class="border-bottom p-2">Module</h5>
+            <div class="row row-cols-3 mb-3">
+              <div class="col form-group">
+                <label class="font-weight-bold">Module:</label>
+                <select class="form-control">
+                  <option>- Any -</option>
+                  <option>Batch Reporting</option>
+                  <option>Broadcast</option>
+                  <option>Categories</option>
+                  <option>Documents</option>
+                  <option>Grades</option>
+                  <option>Insight</option>
+                  <option>News</option>
+                  <option>Nova</option>
+                  <option>Pendulum</option>
+                  <option>RAGs</option>
+                  <option>Target Grades</option>                
+                </select>
+              </div>
+              <div class="col form-group">
+                <label class="font-weight-bold">Option:</label>
+                <select class="form-control">
+                  <option>- Any -</option>
+                  <option>Enabled</option>
+                  <option>Disabled</option>
+                  <option>Green Usage</option>
+                  <option>Amber Usage</option>
+                  <option>Red Usage</option>
+                  <option>No Usage</option>
                 </select>
               </div>
             </div>
