@@ -64,14 +64,6 @@
 					</div>
 				</div>
 			</div>
-      <div class="row mb-3">
-        <div class="col-auto">
-          <span class="btn btn-info">Info</span>
-        </div>
-        <div class="col-auto ml-auto">
-          <span class="btn btn-secondary">Export</span>
-        </div>
-      </div> 
       <div class="row mb-4">
         <div class="col">
           <div class="border shadow p-3 bg-white">
@@ -106,6 +98,16 @@
           </div>
         </div>
       </div> 
+      <div class="row mb-3">
+        <div class="col-auto">
+          <span class="btn btn-info">Info</span>
+          <span class="btn btn-primary">Broadcast</span>
+          <span class="btn btn-primary">Pendulum</span>
+        </div>
+        <div class="col-auto ml-auto">
+          <span class="btn btn-secondary">Export</span>
+        </div>
+      </div> 
     </div>
     <div class="container-fluid">  
       <div class="row ml-5 mr-5">
@@ -116,11 +118,11 @@
                 <th style="width: 15%;">LA</th>
                 <th style="width: 7%;">Data</th>  
                 <th style="width: 7%;">Modules</th>  
-                <th>KPIs</th>  
-                <th>Broadcast</th>
-                <th>Pendulum</th>
-                <th>Users & Logins</th>  
-                <th>Lite Setup</th>  
+                <th class="text-center">KPIs</th>  
+                <th class="text-center">Broadcast</th>
+                <th class="text-center">Pendulum</th>
+                <th class="text-center">Users & Logins</th>  
+                <th class="text-center">Lite Setup</th>  
                 <th style="width:110px;"></th>       
               </tr>            
             </thead>
@@ -204,23 +206,41 @@
                 </div>   
               </td>
               <td>
-                <div class="text-center mb-1">
-                  <span class="badge badge-success">Good Usage</span>
-                </div>               
-                <div class="text-center mb-3">Users: 5</div>
+                <div class="text-center mb-2">Send Files&nbsp;<i class="fas fa-circle text-good"></i></div>
+                <ul style="list-style:none; padding-left:0px; margin-bottom: 0px;">
+                  <li>
+                    <label style="width: 60%; text-align: right; padding-right: 5px;">Users:</label>
+                    5
+                  </li>
+                </ul>
                 <div class="ip-loginchart progress border border-dark w-100 mb-3">
                   <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
                   <div class="progress-bar bg-good" style="width:20%;">1</div>
                   <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
                 </div>
-                <div class="text-center mb-1">
-                  <i class="fas fa-circle text-success"></i>&nbsp;From Schools
-                </div> 
+                <ul class="small" style="list-style: none; padding-left: 0px;">
+                  <li>
+                    <label style="width: 60%; text-align: right; padding-right: 5px;">Recent Files:</label>
+                    10
+                  </li>
+                  <li>
+                    <label style="width: 60%; text-align: right; padding-right: 5px;">Last Published:</label>
+                    24/06/21
+                  </li>
+                </ul>              
+                <div class="text-center mb-3">From Schools&nbsp;<i class="fas fa-circle text-good"></i></div> 
+                <ul class="small" style="list-style:none; padding-left:0px;">
+                  <li>
+                    <label style="width: 60%; text-align: right; padding-right: 5px;">Recent Received:</label>
+                    10
+                  </li>
+                  <li>
+                    <label style="width: 60%; text-align: right; padding-right: 5px;">Last Received:</label>
+                    24/06/21
+                  </li>
+                </ul>         
               </td>
-              <td>
-                <div class="text-center mb-1">
-                  <span class="badge badge-warning">Moderate Usage</span>
-                </div>
+              <td>               
                 <div class="text-center mb-3">Visit Manager+: 5</div>
                 <div class="ip-loginchart progress border border-dark w-100 mb-3">
                   <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
@@ -240,6 +260,16 @@
                   <div class="progress-bar bg-inadequate" style="width:60%;">6</div>
                   <div class="progress-bar bg-secondary" style="width:40%;">4</div>
                 </div>
+                <ul class="small mt-3" style="list-style:none; padding-left:0px; margin-bottom: 0px;">
+                  <li>
+                    <label style="width: 60%; text-align: right; padding-right: 5px;">Recent Visits:</label>
+                    25
+                  </li>
+                  <li>
+                    <label style="width: 60%; text-align: right; padding-right: 5px;">Last Visit:</label>
+                    25/05/21
+                  </li>
+                </ul>
               </td>
               <td>
                 <div class="text-center mb-3">Admin: 5</div>
@@ -272,10 +302,10 @@
                   <div class="progress-bar bg-secondary" style="width:10%;">10</div>
                 </div>
                 <div class="ip-loginchart text-center" style="font-size:0.7em;">
-                  <i class="fas fa-square text-success"></i> This Month
-                  <i class="fas fa-square text-primary"></i> 1 to 3 Months<br />
-                  <i class="fas fa-square text-warning"></i> 3 to 6 Months
-                  <i class="fas fa-square text-danger"></i> More than 6 Months<br />
+                  <i class="fas fa-square text-outstanding"></i> This Month
+                  <i class="fas fa-square text-good"></i> 1 to 3 Months<br />
+                  <i class="fas fa-square text-req-improvment"></i> 3 to 6 Months
+                  <i class="fas fa-square text-inadequate"></i> More than 6 Months<br />
                   <i class="fas fa-square text-secondary"></i> Never Logged In
                 </div>
               </td>
@@ -298,7 +328,7 @@
                     <table class="w-100">
                       <tr>
                         <th></th>
-                        <th class="text-center">Lastest</th>
+                        <th class="text-center">Latest</th>
                         <th colspan="2" class="text-center">Recent Use</th>
                       </tr>
                       <tr>
@@ -590,6 +620,15 @@
                   <option>- All -</option>
                   <option>Memeber</option>
                   <option>Not Member</option>
+                </select>
+              </div>
+              <div class="col form-group">
+                <label class="font-weight-bold">Targets:</label>
+                <select class="form-control">
+                  <option>- All -</option>
+                  <option>Targetting</option>
+                  <option>None</option>
+                  <option>Archived</option>
                 </select>
               </div>
             </div>
