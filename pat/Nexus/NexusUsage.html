@@ -14,6 +14,9 @@
         $("#cbxSchools").change(function () {     
           $(".container-fluid").find(".ip-schoolbreakdown").toggleClass("d-none");
         });
+        $("#cbxAttainment").change(function () {     
+          $(".container-fluid").find(".ip-attainment").toggleClass("d-none");
+        });     
       });
     </script>
     <title></title>   
@@ -119,8 +122,8 @@
                 <th style="width: 7%;">Data</th>  
                 <th style="width: 7%;">Modules</th>  
                 <th class="text-center">KPIs</th>  
-                <th class="text-center">Users & Logins</th>  
-                <th class="text-center">Lite Setup</th>  
+                <th class="text-center">Users</th>  
+                <th class="text-center">Perspective</th>  
                 <th class="text-center">Broadcast</th>
                 <th class="text-center">Pendulum</th>
                 <th style="width:110px;"></th>       
@@ -176,7 +179,15 @@
               <td>
                 <dl class="row row-cols-1 mb-0">
                   <dd class="col"><i class="fas fa-check-circle text-success"></i>&nbsp;Attainment</dd>
+                  <dd class="col small ml-2 ip-attainment d-none">95%&nbsp;EYFSP</dd>
+                  <dd class="col small ml-2 ip-attainment d-none">85%&nbsp;Phonics</dd>
+                  <dd class="col small ml-2 ip-attainment d-none">97%&nbsp;KS1</dd>
+                  <dd class="col small ml-2 ip-attainment d-none">90%&nbsp;KS2</dd>
+                  <dd class="col small ml-2 ip-attainment d-none">0%&nbsp;KS4</dd>
                   <dd class="col"><i class="fas fa-check-circle text-success"></i>&nbsp;Census</dd>
+                  <dd class="col small ml-2 ip-attainment d-none">85%&nbsp;Autumn</dd>
+                  <dd class="col small ml-2 ip-attainment d-none">0%&nbsp;Spring</dd>
+                  <dd class="col small ml-2 ip-attainment d-none">0%&nbsp;Summer</dd>
                   <dd class="col"><i class="fas fa-check-circle text-success"></i>&nbsp;CLA</dd>
                   <dd class="col"><i class="fas fa-times-circle text-danger"></i>&nbsp;CIN</dd>
                   <dd class="col"><i class="fas fa-check-circle text-success"></i>&nbsp;Pupil Prem</dd>
@@ -211,39 +222,47 @@
                   Standard: 25<br/>
                   Other: 10
                 </div>
+                <div class="ip-loginchart text-center">Logins</div>
                 <div class="ip-loginchart progress border border-dark w-100">
-                  <div class="progress-bar bg-outstanding" style="width:10%;">10</div>
-                  <div class="progress-bar bg-good" style="width:40%;">40</div>
-                  <div class="progress-bar bg-req-improvement" style="width:20%;">20</div>
-                  <div class="progress-bar bg-inadequate" style="width:20%;">20</div>
-                  <div class="progress-bar bg-secondary" style="width:40%;">4</div>
+                  <div class="progress-bar bg-outstanding" style="width:10%;" title="This Month">10</div>
+                  <div class="progress-bar bg-good" style="width:40%;" title="1 to 3 Months">40</div>
+                  <div class="progress-bar bg-req-improvement" style="width:20%;" title="3 to 6 Months">20</div>
+                  <div class="progress-bar bg-inadequate" style="width:20%;" title="More than 6 Months">20</div>
+                  <div class="progress-bar bg-secondary" style="width:40%;" title="Never">4</div>
                 </div>
               </td>
               <td>
-                <div class="text-center mb-3">Accounts: 74</div>
+                <div class="text-center mb-3">
+                  Total: 74<br/>
+                  <div class="small">
+                    Lite: 50<br/>
+                    Full:20
+                  </div>
+                </div>
+                <div class="ip-loginchart text-center">Breakdown</div>
                 <div class="ip-loginchart progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:10%;">10</div>
-                  <div class="progress-bar bg-good" style="width:40%;">40</div>
-                  <div class="progress-bar bg-req-improvement" style="width:20%;">20</div>
-                  <div class="progress-bar bg-inadequate" style="width:20%;">20</div>
-                  <div class="progress-bar bg-secondary" style="width:10%;">10</div>
-                </div>
-                <div class="ip-loginchart text-center" style="font-size:0.7em;">
-                  <i class="fas fa-square text-outstanding"></i> This Month
-                  <i class="fas fa-square text-good"></i> 1 to 3 Months<br />
-                  <i class="fas fa-square text-req-improvment"></i> 3 to 6 Months
-                  <i class="fas fa-square text-inadequate"></i> More than 6 Months<br />
-                  <i class="fas fa-square text-secondary"></i> Never Logged In
-                </div>
+                  <div class="progress-bar bg-success" style="width:20%;" title="Full">20</div>
+                  <div class="progress-bar bg-info" style="width:70%;" title="Lite">50</div>
+                  <div class="progress-bar bg-secondary" style="width:10%;" title="No Account">5</div>
+                </div>   
+                <div class="ip-loginchart text-center">Logins</div>
+                <div class="ip-loginchart progress border border-dark w-100 mb-3">
+                  <div class="progress-bar bg-outstanding" style="width:10%;" title="This Month">10</div>
+                  <div class="progress-bar bg-good" style="width:40%;" title="1 to 3 Months">40</div>
+                  <div class="progress-bar bg-req-improvement" style="width:20%;" title="3 to 6 Months">20</div>
+                  <div class="progress-bar bg-inadequate" style="width:20%;" title="More than 6 Months">20</div>
+                  <div class="progress-bar bg-secondary" style="width:10%;" title="Never">10</div>
+                </div>             
               </td>
               <td>
                 <div class="text-center mb-3">
                   Users: 5
                 </div>
+                <div class="ip-loginchart text-center">Logins</div>
                 <div class="ip-loginchart progress border border-dark w-100 mb-3">
-                  <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                  <div class="progress-bar bg-good" style="width:20%;">1</div>
-                  <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                  <div class="progress-bar bg-outstanding" style="width:20%;" title="This Month">1</div>
+                  <div class="progress-bar bg-good" style="width:20%;" title="1 to 3 Months">1</div>
+                  <div class="progress-bar bg-inadequate" style="width:60%;" title="More than 6 Months">3</div>
                 </div>
                 <div class="text-center mb-2">Send Files&nbsp;<i class="fas fa-circle text-good"></i></div>     
                 <ul class="small" style="list-style: none; padding-left: 0px;">
@@ -271,15 +290,17 @@
               <td>               
                 <div class="text-center mb-3">
                   Visit Manager+: 5<br/>
+                  Admin: 0<br/>
                   Adviser: 25<br/>
                   Standard: 10
                 </div>
+                <div class="ip-loginchart text-center">Logins</div>
                 <div class="ip-loginchart progress border border-dark w-100 mb-2">
-                  <div class="progress-bar bg-outstanding" style="width:60%;">6</div>
-                  <div class="progress-bar bg-good" style="width:60%;">6</div>
-                  <div class="progress-bar bg-req-improvement" style="width:60%;">6</div>
-                  <div class="progress-bar bg-inadequate" style="width:60%;">6</div>
-                  <div class="progress-bar bg-secondary" style="width:40%;">4</div>
+                  <div class="progress-bar bg-outstanding" style="width:60%;" title="This Month">6</div>
+                  <div class="progress-bar bg-good" style="width:60%;" title="1 to 3 Months">6</div>
+                  <div class="progress-bar bg-req-improvement" style="width:60%;" title="3 to 6 Months">6</div>
+                  <div class="progress-bar bg-inadequate" style="width:60%;" title="More than 6 Months">6</div>
+                  <div class="progress-bar bg-secondary" style="width:40%;" title="Never Logged In">4</div>
                 </div>
                 <ul class="small mt-3" style="list-style:none; padding-left:0px; margin-bottom: 0px;">
                   <li>
@@ -327,6 +348,24 @@
                         <td class="text-center">-</td>
                       </tr>
                       <tr>
+                        <td>Documents</td>
+                        <td class="text-center">12/04/2021</td>
+                        <td class="text-center">15% Schs</td>
+                        <td class="text-center">2 Usrs</td>
+                      </tr>
+                      <tr>
+                        <td>Insight</td>
+                        <td class="text-center">12/04/2021</td>
+                        <td class="text-center">-</td>
+                        <td class="text-center">2 Usrs</td>
+                      </tr>
+                      <tr>
+                        <td>Nova</td>
+                        <td class="text-center">12/04/2021</td>
+                        <td class="text-center">-</td>
+                        <td class="text-center">2 Usrs</td>
+                      </tr>
+                      <tr>
                         <td>Pendulum</td>
                         <td class="text-center">15/05/2021</td>
                         <td class="text-center">50% Schs</td>
@@ -343,98 +382,67 @@
                         <td class="text-center"></td>
                         <td class="text-center"></td>
                         <td class="text-center"></td>
-                      </tr>
-                      <tr>
-                        <td>Documents</td>
-                        <td class="text-center">12/04/2021</td>
-                        <td class="text-center">15% Schs</td>
-                        <td class="text-center">2 Usrs</td>
-                      </tr>
+                      </tr>                   
                     </table>
                   </div>
                   <div class="col">
                     <h6 class="font-weight-bold">KPIs</h6>
                     <table class="w-100">
                       <tr>
+                        <td></td>
+                        <td style="width: 100px;">Lastest</td>
+                        <td>Breakdown</td>
+                      </tr>
+                      <tr>
                         <td style="width: 120px;">RAGs</td>
+                        <td>24/06/2021</td>
                         <td class="text-center">
                           <div class="ip-loginchart progress border border-dark w-100 mb-3">
-                            <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                            <div class="progress-bar bg-good" style="width:20%;">1</div>
-                            <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                            <div class="progress-bar bg-outstanding" style="width:20%;" title="Green">10</div>
+                            <div class="progress-bar bg-req-improvement" style="width:20%;" title="Amber">10</div>
+                            <div class="progress-bar bg-inadequate" style="width:30%;" title="Red">25</div>
+                            <div class="progress-bar bg-secondary" style="width:50%;" title="No RAG">36</div>
                           </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Grades</td>
+                        <td>12/04/2021</td>
                         <td class="text-center">
                           <div class="ip-loginchart progress border border-dark w-100 mb-3">
-                            <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                            <div class="progress-bar bg-good" style="width:20%;">1</div>
-                            <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                            <div class="progress-bar" style="width:15%; background-color: #8e6cbb;" title="Sustaining Excellence">1</div>
+                            <div class="progress-bar bg-outstanding" style="width:15%;" title="Outstanding">1</div>
+                            <div class="progress-bar bg-good" style="width:15%;" title="Good">1</div>
+                            <div class="progress-bar bg-inadequate" style="width:25%;" title="Inadequate">3</div>
+                            <div class="progress-bar bg-secondary" style="width:30%;" title="No Grade">3</div>
                           </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Target Grades</td>
+                        <td>12/04/2021</td>
                         <td class="text-center">
                           <div class="ip-loginchart progress border border-dark w-100 mb-3">
-                            <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                            <div class="progress-bar bg-good" style="width:20%;">1</div>
-                            <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                            <div class="progress-bar" style="width:25%; background-color: #8e6cbb;" title="Sustaining Excellence">1</div>
+                            <div class="progress-bar bg-outstanding" style="width:25%;" title="Outstanding">1</div>
+                            <div class="progress-bar bg-good" style="width:25%;" title="Good">1</div>
+                            <div class="progress-bar bg-inadequate" style="width:10%;" title="Requires Improvement">3</div>
+                            <div class="progress-bar bg-req-improvement" style="width:5%;" title="Inadequate">3</div>
+                            <div class="progress-bar bg-secondary" style="width:10%;" title="No Target Grade">3</div>
                           </div>
                         </td>
                       </tr>
                       <tr>
                         <td>Categories</td>
+                        <td>28/09/2020</td>
                         <td class="text-center">
                           <div class="ip-loginchart progress border border-dark w-100 mb-3">
-                            <div class="progress-bar bg-outstanding" style="width:20%;">1</div>
-                            <div class="progress-bar bg-good" style="width:20%;">1</div>
-                            <div class="progress-bar bg-inadequate" style="width:60%;">3</div>
+                            <div class="progress-bar bg-outstanding" style="width:20%;" title="A">1</div>
+                            <div class="progress-bar bg-good" style="width:20%;" title="B">1</div>
+                            <div class="progress-bar bg-inadequate" style="width:15%;" title="C">3</div>
+                            <div class="progress-bar bg-secondary" style="width:45%;" Title="No Categoruy">3</div>
                           </div>
                         </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="col">
-                    <h6 class="font-weight-bold">Data (2020/21)</h6>
-                    <table class="w-100">
-                      <tr>
-                        <th></th>
-                        <th class="text-center">EYFSP</th>
-                        <th class="text-center">Phonics</th>
-                        <th class="text-center">KS1</th>
-                        <th class="text-center">KS2</th>
-                        <th class="text-center">KS4</th>
-                      </tr>
-                      <tr>
-                        <td>Schools</td>
-                        <td class="text-center">95%</td>
-                        <td class="text-center">98%</td>
-                        <td class="text-center">99%</td>
-                        <td class="text-center">92%</td>
-                        <td class="text-center">0%</td>
-                      </tr>
-                    </table>
-                    <table class="w-100">
-                      <tr>
-                        <th></th>
-                        <th class="text-center">PP</th>
-                        <th class="text-center">CLA</th>
-                        <th class="text-center">CIN</th>
-                        <th class="text-center">Aut</th>
-                        <th class="text-center">Spr</th>
-                        <th class="text-center">Sum</th>
-                      </tr>
-                      <tr>
-                        <td>Imported</td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
-                        <td class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
                       </tr>
                     </table>
                   </div>
@@ -533,11 +541,15 @@
               <ul style="padding-left: 0px; list-style: none;">
                 <li>
                   <input id="cbxLogins" class="mt-2" type="checkbox" checked="true"></input>
-                  <span class="mr-2">Show Login Bars</span>                
+                  <span class="mr-2">Show Charts</span>                
                 </li>
                 <li>
                   <input id="cbxSchools" class="mt-2" type="checkbox" checked="true"></input>
                   <span class="mr-2">Show School Breakdown</span>    
+                </li>
+                <li>
+                  <input id="cbxAttainment" class="mt-2" type="checkbox"></input>
+                  <span class="mr-2">Show Import Breakdown</span>    
                 </li>
               </ul>
               <span class="mr-1">Order By</span>               
