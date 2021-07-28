@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="../../../static/css/bootstrap4/bootstrap-custom.css">
+        <script src="https://kit.fontawesome.com/9292536ebe.js" crossorigin="anonymous"></script>
+        <title>PIES - Pupil Submission Form</title>
+        <style>
+            .nav-item a {
+                color:white;
+            }
+
+            h1 {
+                color: #4f7b91;
+                font-weight: 700;
+                font-family:  Open Sans,Arial,Helvetica,sans-serif;
+            }
+
+            .info-list {
+                list-style: none;
+            }
+            .info-list li label {
+                font-weight: bold;
+                text-align: right;
+                width: 175px;
+                margin-right: 10px;;
+            }
+
+            .form {
+                border:1px solid #d2dbe0;
+                border-radius: 5px;
+                padding: 25px;
+                margin-top: 25px;;
+            }
+
+            .form-header {
+                color: #4f7b91;
+                font-weight: 500;
+                font-family:  Open Sans,Arial,Helvetica,sans-serif;
+                margin-bottom: 20px;
+            }
+
+            .data-table tr td {
+                padding-bottom:15px;
+            }
+        </style>
+    </head>
+    <body style="margin:0px;">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Change Destination School</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row ml-5 mr-5">
+                            <label class="col-sm-3 col-form-label">Destination</label>
+                            <div class="col-sm-9">
+                                <select class="form-control">
+                                    <option>Please Select...</option>
+                                </select>
+                            </div>
+                        </div> 
+                        <div class="group">
+                            <button class="btn btn-psp-primary float-right">Save</button>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row m-0" style="background-color: #4f7b91; height: 45px;">
+            <div class="container">
+               <ul class="nav" >
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">NEWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">WATCHSTED</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TOOLS</a>
+                    </li>
+                </ul>             
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-4 mb-4">
+                <div class="col">
+                    <h1>Pupil Submission Form: Westeros</h1>
+                </div>
+                <div class="col col-auto">
+                    <button class="btn btn-psp-primary">Back</button>
+                    <button class="btn btn-psp-secondary">Save</button>
+                    <button class="btn btn-success">Submit</button>
+                </div>
+            </div>
+            <div class="mt-5">
+                <ul class="info-list">
+                    <li>
+                        <label>Pupil Name:</label>
+                        <span>Joffrey Baratheon</span>                      
+                    </li>
+                    <li>
+                        <label>UPN:</label>
+                        <span>J999200012398</span>
+                    </li>
+                    <li>
+                        <label>Date of Birth:</label>
+                        <span>27/04/2010</span>
+                    </li>
+                    <li>
+                        <label>Destination School:</label>
+                        <span>King's Landing Secondary School (9994000)</span>
+                        <button class="btn btn-psp-primary" style="font-size: 0.7em; padding: 3px 5px 3px 5px;" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn form-header mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Guidance
+                            </button>
+                        </h5>
+                    </div>              
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>
+                                The purpose of the form is to better inform the secondary school about the pupil and best support the transition process.  The use of one common form for all pupils moving from primary to secondary will also seek to reduce the burden on year six teachers having to complete many different forms for different schools.  This form does not duplicate information already contained on the common transfer form (CTF) but it allows the opportunity to add detail if needed.
+                            </p>
+                            <p>
+                                A form should be completed for each pupil moving to a Liverpool secondary school. No form needs to be completed for those pupils moving out-of-boundary.
+                            </p>
+                            <p>
+                                When completing this form, please take into consideration that this form could be seen by the child’s parents or carers if requested.  If you have specific concerns about the child you can always tick the final box at the end of the form; this will prompt the child’s secondary school to contact you directly.  This can also be used if you wish to elaborate on any section of the form.
+                            </p>
+                            <p>
+                                Questions that require an answer are marked with a red asterisk. To submit the form click the "Submit" button at the bottom. Once submitted you'll find a "submit another response" link to begin a new form for another pupil. These forms should be completed as soon as possible, at the latest by FRIDAY 14th MAY. We will collate the submissions, match to pupil admissions and contextual data and supply the results to the secondary schools.
+                            </p>
+                            <p>
+                                EHAT – In this section, the teacher would need to name the lead professional and give contact details.  Providing the EHAT number would be useful. If CAMHS are involved, the type of support and named worker with contact details is needed. Similarly for social care involvement where the social worker and his/her details should be given.
+                            </p>
+                            <p>
+                                Information about EAL and medical concerns are given through the CTF, so no sections are given to this area.  However, if there are issues that the secondary school needs to be alerted to, as highlighted above, in the final section there is a box that can be ticked indicating that the secondary school needs to contact the primary school for further information.
+                            </p>
+                            <p>
+                                The transition process for SEND is dealt with separately so not included on this form.
+                            </p>
+                            <p>
+                                Please note, all safeguarding information must be shared with the secondary school and should be securely delivered to them before the start of the autumn term. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form">
+                <h5 class="form-header">Pupil Details</h5>
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Ability to form friendships</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>Very socialable</option>
+                            <option>Some good friends</option>
+                            <option>Shy/Friendships difficult</option>
+                        </select>
+                    </div>
+                </div>   
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Ability to work in a team</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>Leadership qualities</option>
+                            <option>Good group work</option>
+                            <option>Passive/Awkward in groups</option>
+                        </select>
+                    </div>
+                </div>  
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Behaviour</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>Very good</option>
+                            <option>Usually good/Positive</option>
+                            <option>Can be challenging</option>
+                        </select>
+                    </div>
+                </div>  
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Participation in school life</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>Outstanding</option>
+                            <option>Average</option>
+                            <option>Poor</option>
+                        </select>
+                    </div>
+                </div>  
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Situation where pupil achieves most</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>In groups</option>
+                            <option>In pairs</option>
+                            <option>Alone</option>
+                        </select>
+                    </div>
+                </div>  
+            </div>
+            <div class="form">
+                <h5 class="form-header">Assessments</h5>
+                <div class="pl-5 pr-5">
+                    <table class="data-table w-100">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="text-center">Assessment Date</td>
+                        </tr>
+                        <tr>
+                            <td>Reading Age</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Please enter a reading age for the pupil"/>
+                            </td>
+                            <td>
+                                <input type="date" class="form-control"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Spelling Age</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Please enter a spelling age for the pupil"/>
+                            </td>
+                            <td>
+                                <input type="date" class="form-control"/>
+                            </td>
+                        </tr>
+                    </table>                  
+                </div>
+
+            </div>
+            <div class="form">
+                <h5 class="form-header">Vulnerability characteristics</h5>
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Persistent absentee</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                </div>  
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Pupil Premium</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                </div>   
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Past safeguarding concerns</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                </div>      
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Current safeguarding concerns</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                </div>                  
+            </div>          
+            <div class="form">
+                <h5 class="form-header">Important Contacts</h5>
+                <div class="pl-5 pr-5">
+                    <table class="data-table w-100">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="text-center">Not Applicable</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="col-form-label">Social worker</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control"  placeholder="Leave blank if not applicable." />
+                            </td>
+                            <td>
+                                <input type="checkbox" class="form-control text-center" style="font-size: 0.5em;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="col-form-label">EHAT </label>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Please Select...</option>
+                                    <option>No</option>
+                                    <option>Yes</option>
+                                </select>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="col-form-label">EHAT Contact</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control"  placeholder="Leave blank if not applicable." />
+                            </td>
+                            <td>
+                                <input type="checkbox" class="form-control text-center" style="font-size: 0.5em;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="col-form-label">CAMHS/Seedlings/MHST</label>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Please Select...</option>
+                                    <option>No</option>
+                                    <option>Yes</option>
+                                </select>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="col-form-label">CAMHS/Seedlings/MHST Contact</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control"  placeholder="Leave blank if not applicable."/>
+                            </td>
+                            <td>
+                                <input type="checkbox" class="form-control text-center" style="font-size: 0.5em;"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>              
+            </div>
+            <div class="form">
+                <h5 class="form-header">Notes</h5>
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Friendship groups</label>
+                    <div class="col-sm-9">
+                        <textarea rows="2" class="form-control" placeholder="Please give any friendship notes or concerns."></textarea>
+                    </div>
+                </div>   
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Extra-curricular activities</label>
+                    <div class="col-sm-9">
+                        <textarea rows="2" class="form-control" placeholder="Please give any information about any extra-curricular activities, clubs, skills, or abilities for this pupil."></textarea>
+                    </div>
+                </div> 
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Bereavement issues</label>
+                    <div class="col-sm-9">
+                        <textarea rows="2" class="form-control" placeholder="Leave blank if not applicable."></textarea>
+                    </div>
+                </div> 
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Confidence/Self-esteem issues</label>
+                    <div class="col-sm-9">
+                        <textarea rows="2" class="form-control" placeholder="Leave blank if not applicable."></textarea>
+                    </div>
+                </div> 
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Bullying issues</label>
+                    <div class="col-sm-9">
+                        <textarea rows="2" class="form-control" placeholder="As a victim or perpetrator. Leave blank if not applicable."></textarea>
+                    </div>
+                </div> 
+            </div>
+            <div class="form">
+                <h5 class="form-header">Contact</h5>
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Additional conversation required</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                </div> 
+                <div class="form-group row ml-5 mr-5">
+                    <label class="col-sm-3 col-form-label">Include your contact details</label>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+                            <option>Please Select...</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div> 
+            </div>
+            <div class="row mt-4 mb-4">
+                <div class="col"></div>
+                <div class="col col-auto">
+                    <button class="btn btn-psp-primary">Back</button>
+                    <button class="btn btn-psp-secondary">Save</button>
+                    <button class="btn btn-success">Submit</button>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    </body>
+</html>
